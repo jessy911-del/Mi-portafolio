@@ -1,0 +1,165 @@
+body {
+    background-color: #0F172A;
+    color: white;
+    font-family:Arial, sans-serif;
+    padding: 40px;
+}
+
+h1 {
+    color: #6366f1;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #10b981;
+    
+}
+
+button { 
+    cursor: pointer;
+    
+}
+
+img{
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 16px;
+    height: 200px;
+    background-color: #1E293B;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.tarjeta {
+    background-color: #6366F1;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E293B;
+    padding: 16px 32px;
+    border-radius: 12px;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    color: #6366f1;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color:#6366f1;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.nombre {
+    color: #6366f1;
+}
+
+.btn-hero {
+    background-color: #6366f1;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 24px;
+}
+
+.btn-hero:hover {
+    background-color: #4f46e5;
+}
+
+.habilidades {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.habilidades h2 {
+    margin-bottom: 32px;
+}
+
+.tarjetas {
+    justify-content: center;
+    height: auto;
+}
+
+.contacto {
+    text-align: center;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.contacto h2 {
+    margin-bottom: 8px;
+}
+
+.input {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background-color: #1E293B;
+    color:white;
+    font-size: 15px;
+    width: 300px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background-color: #1e293b;
+    border-radius: 12px;
+    margin-top: 60px;
+}
+
+.redes {
+    display: flex;
+    gap: 20px;
+}
+.redes a {
+    color:#6366f1;
+    text-decoration: none;
+}
+
+.redes a:hover{
+    color: white;
+}
