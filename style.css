@@ -206,3 +206,24 @@ input {
     flex-wrap: wrap;
 }
     }
+
+.style.background-color {
+    background-color: #ffffff;
+}
+
+.btn-tema {
+    background-color: transparent;
+    color: #6366F1;
+    padding: 14px 32px;
+    border: 2px solid #6366F1;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 24px;
+    margin-left: 12px;
+}
+
+.btn-tema:hover {
+    background-color: #6366F1;
+    color: white;
+}
