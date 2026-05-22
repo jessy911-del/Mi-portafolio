@@ -1,21 +1,19 @@
-let botonProyectos = document.querySelector(".btn-hero");
-let botonTema = document.querySelector(".btn-tema");
-let body = document.querySelector("body");
+let botonenviar = document.querySelector(".contacto .btn-hero");
+let inputNombre = document.querySelector("input[type='text']");
+let inputEmail = document.querySelector("input[type='email']");
+let mensaje = document.getElementById("mensaje");
 
-let temaOscuro = true;
+botonenviar.addEventListener("click", function() {
+    let nombre = inputNombre.value;
+    let email = inputEmail.value;
 
-botonProyectos.addEventListener("click", function() {
-    alert("¡Aquí irán mis proyectos!");
-});
-
-botonTema.addEventListener("click", function() {
-    if (temaOscuro) {
-        body.style.backgroundColor = "#ffffff";
-        body.style.color = "#0F172A";
-        temaOscuro = false;
-    } else {
-        body.style.backgroundColor = "#0F172A";
-        body.style.color = "white";
-        temaOscuro = true;
+    if (nombre === "" || email === "") {
+        mensaje.textContent = "⚠️ Por favor llena todos los campos.";
+        mensaje.style.color = "ef4444";
+        return;
     }
+
+    mensaje.textContent = "✅ ¡Gracias por contactarme, " + nombre + "! Pronto me pondré en contacto contigo." + email;
+    mensaje.style.color = "10b981";
+
 });
