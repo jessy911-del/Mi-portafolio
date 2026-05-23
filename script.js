@@ -1,23 +1,45 @@
-let botonenviar = document.querySelector(".contacto .btn-hero");
+// ── Seleccionar elementos ──────────────────────────────
+let botonEnviar = document.querySelector(".contacto .btn-hero");
+let botonTema = document.querySelector(".btn-tema");
+let botonProyectos = document.querySelector(".btn-hero");
 let inputNombre = document.querySelector("input[type='text']");
 let inputEmail = document.querySelector("input[type='email']");
 let mensaje = document.getElementById("mensaje");
+let body = document.querySelector("body");
 
-botonenviar.addEventListener("click", function() {
+// ── Tema oscuro/claro con localStorage ────────────────
+let temaOscuro = localStorage.getItem("tema") !== "claro";
+
+botonTema.addEventListener("click", function() {
+    if (temaOscuro) {
+        body.style.backgroundColor = "#ffffff";
+        body.style.color = "#0F172A";
+        temaOscuro = false;
+        localStorage.setItem("tema", "claro");
+    } else {
+        body.style.backgroundColor = "#0F172A";
+        body.style.color = "white";
+        temaOscuro = true;
+        localStorage.setItem("tema", "oscuro");
+    }
+});
+
+// ── Formulario de contacto ─────────────────────────────
+botonEnviar.addEventListener("click", function() {
     let nombre = inputNombre.value;
     let email = inputEmail.value;
 
     if (nombre === "" || email === "") {
         mensaje.textContent = "⚠️ Por favor llena todos los campos.";
-        mensaje.style.color = "#ef4444"; 
+        mensaje.style.color = "#ef4444";
         return;
     }
 
-    mensaje.textContent = "✅ ¡Gracias por contactarme, " + nombre + "! Pronto me pondré en contacto contigo." + email;
-    mensaje.style.color = "#10b981"; 
-
+    mensaje.textContent = "✅ ¡Gracias, " + nombre + "! Pronto me pondré en contacto contigo.";
+    mensaje.style.color = "#10b981";
 });
 
+// ── Proyectos dinámicos ────────────────────────────────
 let proyectos = [
     { nombre: "Portafolio Personal", tecnologia: "HTML & CSS" },
     { nombre: "App del clima", tecnologia: "JavaScript & API" },
@@ -25,7 +47,6 @@ let proyectos = [
     { nombre: "Tienda Online", tecnologia: "React" },
     { nombre: "Blog Personal", tecnologia: "Node.js" },
     { nombre: "Chat en tiempo real", tecnologia: "Socket.io" },
-
 ];
 
 let grid = document.getElementById("grid-proyectos");
@@ -33,11 +54,21 @@ let grid = document.getElementById("grid-proyectos");
 proyectos.forEach(function(proyecto) {
     let div = document.createElement("div");
     div.classList.add("proyecto");
-
     div.innerHTML = `
-    <h3>${proyecto.nombre}</h3>
-    <p>${proyecto.tecnologia}</p>
-`;
-    grid.appendChild(div);
+        <h3>${proyecto.nombre}</h3>
+        <p>${proyecto.tecnologia}</p>
+    `;
 
+    div.addEventListener("mouseover", function() {
+        div.style.transform = "translateY(-8px)";
+        div.style.transition = "transform 0.3s";
+        div.style.boxShadow = "0 10px 30px rgba(99, 102, 241, 0.3)";
+    });
+
+    div.addEventListener("mouseout", function() {
+        div.style.transform = "translateY(0)";
+        div.style.boxShadow = "none";
+    });
+
+    grid.appendChild(div);
 });
