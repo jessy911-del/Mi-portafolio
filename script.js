@@ -72,3 +72,19 @@ proyectos.forEach(function(proyecto) {
 
     grid.appendChild(div);
 });
+
+
+fetch("https://jsonplaceholder.typicode.com/users/2")
+    .then(response => response.json())
+    .then(data => { 
+            let contenedor = document.getElementById("usuario-api");
+            contenedor.innerHTML = `
+                <p><strong>Nombre:</strong> ${data.name}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Telefono:</strong> ${data.phone}</p>
+                <p><strong>Ciudad:</strong> ${data.address.city}</p>
+
+            `;
+    });
+
+
